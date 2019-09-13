@@ -1,0 +1,41 @@
+CREATE TABLE projects (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	name text,
+	description text,
+	is_completed integer
+);
+
+CREATE TABLE tasks (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	project_id integer,
+	description text,
+	note text,
+	is_completed integer
+);
+
+CREATE TABLE resources (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	name text,
+	description text
+);
+
+CREATE TABLE projects_resources (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	project_id integer,
+	resource_id integer,
+	note text
+);
+
+CREATE TABLE contexts (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	name text,
+	note text
+);
+
+CREATE TABLE contexts_tasks (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	context_id integer,
+	task_id integer,
+	note text
+);
+
