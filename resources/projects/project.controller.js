@@ -1,10 +1,14 @@
 const Project = require("./project.model");
+
 let controller = {
   getProjectById: async (req, res) => {
     const { id } = req.params;
 
     try {
-      const project = await Project.query().findById(id);
+      const project = await Project.query()
+        .eager("[tasks, resources]")
+        .where("projects.id", id)
+        .then(project => project);
       res.json({ project });
     } catch (e) {
       console.log(e);
