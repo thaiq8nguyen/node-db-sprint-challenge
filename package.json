@@ -20,7 +20,7 @@
   "homepage": "https://github.com/thaiq8nguyen/node-db-sprint-challenge#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.19.4",
+    "knex": "^2.4.0",
     "morgan": "^1.9.1",
     "sqlite3": "^4.1.0"
   },
